@@ -1,0 +1,24 @@
+<!-- header.component.html -->
+<div class="header">
+    <div class="header__left">
+      <a class="link" routerLink="/home">Dashboard</a>
+    </div>
+    <div class="header__right">
+      <i class="user-icon fa-solid fa-user" icon="user-circle" (click)="handleDropdownToggle()"></i>
+      <div *ngIf="isDropdownOpen" class="dropdown">
+        <div class="dropdown-content">
+            <img *ngIf="userInfo?.profilePic" [src]="userInfo.profilePic" alt="Profile Picture" class="profile-pic" />
+            <img *ngIf="!userInfo?.profilePic" src="assets/image.png" alt="Default Profile Picture" class="profile-pic" />
+            
+          <p *ngIf="userInfo">{{ userInfo.name }}</p>
+          <p *ngIf="userInfo">{{ userInfo.email }}</p>
+          <div class="btn" style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <button class="dropdown-button" (click)="handleLogout()">Logout</button>
+            <button class="dropdown-button" (click)="navigateToOrders()">Go to your orders</button>
+          </div>
+        </div>
+      </div>
+      <i class="fa-solid cart-icon fa-cart-shopping" (click)="handleCartClick()"></i>
+    </div>
+  </div>
+ 

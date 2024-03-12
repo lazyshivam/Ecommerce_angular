@@ -1,0 +1,25 @@
+<div class="outer-container">
+    <div class="signUp-container">
+        <h1>Login</h1>
+        <div class="user-container">
+            <div class="utility">
+                <label for="userEmail">Email</label>
+                <input type="text" [(ngModel)]="userEmail" placeholder="Enter your email"  id="userEmail">
+            </div>
+            <div class="utility">
+                <label for="userName">Password</label>
+                <input type="text" [(ngModel)]="userPassword" placeholder="Enter your password"  id="userPassword">
+                <div *ngIf="isValidLength" class="password-error">
+                    Password must be at least 8 characters long.
+                </div>
+                <div *ngIf="isValid" class="password-error">
+                    Password must contain at least one letter and one number.
+                </div>
+            </div>
+             <a routerLink="/forgot-password">Forgot password ?</a>
+            <button (click)="onSubmit()" class="sign-btn">LogIn</button>
+             <p> Don't have an account?{{" "}}<a routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page">Signup</a></p>
+        </div>
+    </div>
+</div>
+<!-- <li><a routerLink="/second-component" routerLinkActive="active" ariaCurrentWhenActive="page">Second Component</a></li> -->

@@ -1,0 +1,16 @@
+<div class="user-cart-container">
+    <div *ngIf="!userCartData || userCartData.length === 0">
+        <h1>Your cart is empty</h1>
+        <button class="btn" (click)="goToProductPage()">Go To Product Page</button>
+    </div>
+
+    <div class="cart-items-container" *ngIf="userCartData && userCartData.length > 0">
+             <h1>Your Product </h1>
+            <app-cart-item *ngFor="let item of userCartData" [item]="item" (onQuantityChangeEvent)="updateOnQuantityChange($event)" (removeItemEvent)="removeItemFromCart($event)"></app-cart-item>
+            <hr style="width: 100%; color: black; margin-top: 12px;">
+            <div class="cart-checkout-summary">
+                 <p>Total Price :<span>{{totalPrice}}</span></p>
+                <button (click)="makeOrder()">PLACE ORDER</button>
+            </div>
+    </div>
+</div>

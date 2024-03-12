@@ -1,0 +1,17 @@
+<div class="product-card">
+    <img [src]="productData.image || 'https://www.reliancedigital.in/medias/Redmi-A2-Plus-493838651-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3wxNDQ3NDh8aW1hZ2UvanBlZ3xpbWFnZXMvaDBmL2hmMi8xMDA1ODk1NDA0NzUxOC5qcGd8ZjY1NWM4YmE0NmY0ZTEzMTAwNTQ4ZGNjM2RhOGNlYTQ5MGJmZGE2ZWNjOWEzN2U0YjJkNTdlZmNjNzRjNjMwZg'"
+      alt="{{ productData.name }}" />
+    <div class="product-details">
+      <div class="details">
+        <h2>{{ productData.name }}</h2>
+        <p><span>Available: </span>{{ productData.available }}</p>
+        <p><span>Description:</span> {{ productData.description }}</p>
+        <p><span>Price:</span> ${{ productData.price }}</p>
+      </div>
+      <div class="add-btn">
+        <button (click)="handleAddToCart()" class='card-btn'>Add To Cart</button>
+        <button class='show-btn'>Show Details</button>
+      </div>
+    </div>
+  </div>
+  
